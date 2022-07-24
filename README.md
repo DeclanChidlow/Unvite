@@ -15,6 +15,7 @@ Current features as for now:
   - New and hardcoded emotes rendering
   - Reactions rendering (+showing names of people who reacted on hover) and posting support
   - Being able to send and read messages in a voice channel
+  - Keyboard shortcuts (Enter to send message, ESC to scroll to the bottom of the message list)
 
 The hardships you might encounter while using:
   - it only recognises people who said something in the last 50 messages, if someone new joins, their name won't be displayed until you reload. same with reactions, though with them you might not find out
@@ -23,7 +24,7 @@ The hardships you might encounter while using:
   - the channel list lacks categories and is not ordered, same with server list
   - you can only see what a message replies to if that reply is on screen
   - getting older messages has some issues
-  - autoscroll option scrolls to the bottom every time someone sends a message, what can be annoying when trying to read older messages
+  - autoscroll option scrolls to the bottom every time someone sends a message, so it's better to scroll down pressing ESC instead unless you don't want to scroll up
 
 The things I think this client could have
   - showing you are typing (though that not showing could be an advantage for some, considering doing it opt-out)
