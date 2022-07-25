@@ -27,14 +27,14 @@ The hardships you might encounter while using:
   - getting older messages has some issues
   - autoscroll option scrolls to the bottom every time someone sends a message, so it's better to scroll down pressing ESC instead unless you don't want to scroll up
 
-The things I think this client could have
-  - showing you are typing (though that not showing could be an advantage for some, considering doing it opt-out)
+The things I think this client could have and will probably add
   - masquerades sending and being able to save and switch between them so you won't have to remember
   - custom backgrounds
 
 The things I would add but still need to think on how to implement them:
   - unread messages
   - pings
+  - showing if you're typing without spamming the websocket
 
 The things I have absolutely no idea how to add
   - voice chat
