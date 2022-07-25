@@ -9,6 +9,7 @@ Current features as for now:
   - Websocket stuff you would expect from a chat app (provides server list, channel list, saved notes, DM and group chats, new messages, shows when someone is typing)
   - API stuff you would expect from a chat app (Getting messages older than the new ones, sending messages, deleting messages, editing messages)
   - Author name and profile picture displaying (global, not server ones. masquerades display properly, system messages do display)
+  - Displaying time the messages were sent
   - Multireplies (showing and sending), attachments sending (multiple)
   - Attachment embeds + ogg/wav embed support due to a workaround
   - Regular embeds work in progress, right now you can see just the title
@@ -30,7 +31,6 @@ The things I think this client could have
   - showing you are typing (though that not showing could be an advantage for some, considering doing it opt-out)
   - masquerades sending and being able to save and switch between them so you won't have to remember
   - custom backgrounds
-  - displaying when the message was sent
 
 The things I would add but still need to think on how to implement them:
   - unread messages
