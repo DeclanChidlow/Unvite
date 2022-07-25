@@ -1,0 +1,100 @@
+<!-- MIT License
+
+Copyright (c) 2022 DoruDoLasu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. -->
+
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReductV3 ""</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <h1 id="logo">ReductV3 (now with websockets!)</h1>
+    <span id="wsconnection"></span>
+    <h4 id="logo2">light revolt.chat client held together by duct tape and bad code</h4>
+    <!-- <h3 id="channelname">No channel</h3> -->
+
+
+    <div id="messages" style="width: 90vw;height: 85vh;overflow-y: scroll;"></div>
+    <div id="typing"></div>
+    <div id="replyingto"></div>
+
+
+
+    <div id="allcontrols" style="text-align: center;">
+    <span id="precontrols">
+    </span>
+    <span id="controls">
+    </span>
+    </div>
+
+    <div id="changechannel" style="test-align: center;">
+    </div>
+
+
+
+  <style>
+    span {}
+    h1#logo {margin: 0px; background-color:#FD6671;display:inline-block; color: #000000}
+    h1 {color: #b7b2b2}
+    h2#newm {margin: 0px}
+    h2 {color: #b7b2b2}
+    h4#extras {color: #efefef}
+    h3#channelname {margin: 0px; margin-left: 20px}
+    h4#logo2 {margin: 0px;background-color:#848484;display:inline-block;}
+    span.author {margin-left: 5px;color:yellowgreen;border-style: dotted;}
+    span.system {margin-left: 5px;color:purple;border-style: dotted;}
+    span.maskedauthor {margin-left: 5px;color:#ff6d6c;border-style: dotted;}
+    span.deleto {color:#BB5F66}
+    span.replyto {color:#6DAE56}
+    span.timeclas {color: #dabebe}
+    label {color: #ffffff}
+    span#wsconnection {}
+    span#reactcont {padding-left:10px; padding-right:10px; margin-top: -10px; border:2px solid #660909; border-radius: 30%; background-color: #332c29}
+    span#reactcount {color:#989898}
+    #react {height: 24px; max-width:24px}
+    span#emoji {color:#989898;border-style: dotted;}
+    h5#content {border-style: solid; border-width: 1px;margin: 10px;color:#eaeaea}
+    h5#filename {margin:0px;color:#989898}
+    a {color:#FD6671}
+    #embedd {color: white;border: 10px solid #757575;margin: 0px;}
+    div#messages {border:solid 5px;margin-left:5vw;margin-right:5vw;background-color:#242424}
+
+    div#typing {color: #989898}
+    div#replyingto {color: #989898}
+    img.embed {max-height:20vw;max-width: 60vw}
+    img.banner {max-height:20vw;max-width: 60vw}
+    img.pfp {margin-bottom: -2px;height:48px;max-width:48px}
+    img#emoji {height: 64px;max-width: 64px}
+    video {height:20vw}
+
+
+    body {background-color: #242424}
+  </style>
+<script src="main.js"></script>
+</body>
+</html>
