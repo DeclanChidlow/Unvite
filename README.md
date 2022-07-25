@@ -24,7 +24,7 @@ The hardships you might encounter while using:
   - when reacting you have to tell it the emote id/unicode emoji as the emote picker is not in
   - the channel list lacks categories and is not ordered, same with server list
   - you can only see what a message replies to if that reply is on screen
-  - getting older messages has some issues
+  - getting older messages... let's say it has some issues
   - autoscroll option scrolls to the bottom every time someone sends a message, so it's better to scroll down pressing ESC instead unless you don't want to scroll up
 
 The things I think this client could have and will probably add
@@ -38,5 +38,3 @@ The things I would add but still need to think on how to implement them:
 
 The things I have absolutely no idea how to add
   - voice chat
-
-I will upload the actual client when I feel it's a good time for it
