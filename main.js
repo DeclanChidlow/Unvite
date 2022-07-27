@@ -24,6 +24,8 @@ SOFTWARE. */
 
 
 var theusers = {};
+var friendidtoname = {};
+
 var thetoken = undefined;
 var thechannel = undefined;
 var theserver = undefined;
@@ -194,6 +196,11 @@ socket.addEventListener('message', function (event) {
 			thefirstthing = JSON.parse(datta);
             serverlist = thefirstthing.servers;
             channellist = thefirstthing.channels;
+
+            thefirstthing.users.forEach(function (item){
+              friendidtoname[item._id] = item.username;
+            });
+
             changeservchannel();
                 }
                 if (JSON.parse(datta)["type"] == "Message" && JSON.parse(datta)["channel"] == thechannel) {
@@ -311,10 +318,18 @@ function dmlist(){
    thechannel = undefined;
    document.getElementById("replyingto").innerHTML = '';
    document.getElementById("messages").innerHTML = '<button onclick="grouplist()">Groups</button><button onclick="changeservchannel()">Servers</button><button onclick="savednotesgo()">Saved Notes</button><h1>DM list: </h1><select name="seletcc" id="selecttt"></select><button onclick="chchannelnext()">ok</button>';
+
+
+
     channellist.forEach(function(item, index) {
       if (item.channel_type == "DirectMessage") {
       var dm = document.createElement("option");
-      dm.textContent = item._id;
+      if ((friendidtoname[item.recipients[0]] !== undefined) && (friendidtoname[item.recipients[1]] !== undefined)){
+        dm.textContent = friendidtoname[item.recipients[0]] + " - " + friendidtoname[item.recipients[1]];
+      }
+      else {
+        dm.textContent = item._id;
+      }
       dm.value = item._id;
       
     var channeldiv = document.createElement("div");
@@ -385,7 +400,7 @@ function ulidtodate(ulid){
     finaldate = 0;
     date = ulid.slice(0,10);
     date.split('').reverse().forEach(function(item, index) {
-    finaldate += digits.indexOf(item)*(32 ** index);
+    finaldate += digits.indexOf(item)*(Math.pow(32, index));
     });
     return finaldate;
 }
