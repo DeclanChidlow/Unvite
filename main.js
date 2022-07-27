@@ -348,7 +348,7 @@ function grouplist(){
     channellist.forEach(function(item, index) {
       if (item.channel_type == "Group") {
       var dm = document.createElement("option");
-      dm.textContent = item._id;
+      dm.textContent = item.name;
       dm.value = item._id;
 
     var channeldiv = document.createElement("div");
