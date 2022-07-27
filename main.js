@@ -366,7 +366,7 @@ function savednotesgo(){
   lastmessage = undefined;
   firstmessage = undefined;
   document.getElementById("messages").innerHTML = "";
-  document.getElementById("preontrols").hidden = false;
+  document.getElementById("precontrols").hidden = false;
   document.getElementById("controls").hidden = false;
   getmessagelegacy();
 }
