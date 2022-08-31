@@ -154,7 +154,7 @@ var theoldcustemotes = {
 
 document.getElementById("messages").innerHTML = '<div id="loggingin" style="text-align: center;display: grid;"><input id="token"/><h4 id="logo2">ENTER TOKEN HERE and press ok</h4><button onclick="login()">ok</button><input type="checkbox" onclick="wipelocal()" id="keeptoken" name="keep"><label for="keep">Keep entered token saved in localStorage of your browser (unchecking clears it)</label><h4 id="logo2">To obtain your token, paste and press enter on this in the web console (Ctrl-Shift-I) if you\'re using Revite (default Revolt chat client): <p>window.state.auth.sessions.get(controllers.client.getReadyClient().user._id).session.token</p> or check out <a style="color: #BB000E" href="https://infi.sh/post/revolt-tokens">Infi\'s website</a> if you want a slower way that will work with all Revolt web clients</h4><h4 id="logo2"><br/><a style="color: #BB000E" href="https://github.com/DoruDoLasu/Reduct">ReductV3 GitHub</a></h4></div><h4 id="extras">Extra options: </h4><input type="checkbox" id="scrolloff" name="scrolloff"><label for="scrolloff">Always autoscroll</label>';
 
-
+thestage = "login";
 
 if (localStorage.tokeno !== undefined) {
   document.getElementById("token").value = localStorage.tokeno;
@@ -193,6 +193,7 @@ socket.addEventListener('message', function (event) {
                 datta = event.data;
 
                 if (JSON.parse(datta)["type"] == "Ready") {
+                    thestage = "loggedin";
 			thefirstthing = JSON.parse(datta);
             serverlist = thefirstthing.servers;
             channellist = thefirstthing.channels;
@@ -247,6 +248,7 @@ function login() {
     autoscroll = true;
   }
    thetoken = document.getElementById("token").value;
+   document.getElementById("logo2").innerHTML = '';
     document.getElementById("loggingin").innerHTML = '';
     document.getElementById("precontrols").innerHTML = '<button onclick="changeservchannel()">Servers</button>';
     document.getElementById("controls").innerHTML = '<input id="a"/><button id="send" onclick="sendmessagelegacy()">Send</button><button onclick="attachprepare()">+</button><button id="gett" onclick="getmessagelegacy()">Full channel/WS reload</button>';
@@ -257,6 +259,7 @@ function login() {
 }
 
 function changeservchannel(){
+    thestage = "scgchange";
   thechannel = undefined;
   document.getElementById("controls").hidden = true;
   document.getElementById("replyingto").innerHTML = '';
@@ -281,6 +284,7 @@ function changeservchannel(){
 }
 
 function chserver(){
+    thestage = "schange";
   theserver = document.getElementById('selectt').value;
   serverlist.forEach(function(item, index) {
     if (item._id == theserver) {
