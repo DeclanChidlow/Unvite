@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+{% comment %}
+    Previously we used this.
+        <p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+    But now we link to the post's author, if it has one.
+{% endcomment %}
+
+<p>
+    {{ page.date | date_to_string }}
+    {% assign author = site.authors | where: 'short_name', page.author | first %}
+    {% if author %}
+      - <a href="{{ author.url | relative_url }}">{{ author.name }}</a>
+    {% endif %}
+</p>
+
+
+{{ content }}

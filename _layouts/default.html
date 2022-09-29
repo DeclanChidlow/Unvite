@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- RSS feed -->
+    {% feed_meta %}
+
+    {% seo %}
+
+    {% if jekyll.environment == "production" %}
+        <!-- Analytics tracking -->
+        <script src="{{ site.baseurl }}{% link assets/js/analytics.js %}"></script>
+    {% endif %}
+    
+    <link rel="stylesheet" href="{{ site.baseurl }}{% link assets/css/styles.scss %}">
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    {% include navigation.html %}
+
+    <!-- Content -->
+    {{ content }}
+
+    <script src="{{ site.baseurl }}{% link main.js %}"></script>
+    
+</body>
+
+</html>

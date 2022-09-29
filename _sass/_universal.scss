@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: Lexend Deca, sans-serif;
+    color: #cdd6f4;
+    background-color: #242424;
+}
+
+span {
+}
+
+span.author {
+    margin-left: 5px;
+    color: yellowgreen;
+    border-style: dotted;
+}
+
+span.system {
+    margin-left: 5px;
+    color: purple;
+    border-style: dotted;
+}
+
+span.maskedauthor {
+    margin-left: 5px;
+    color: #ff6d6c;
+    border-style: dotted;
+}
+
+span.deleto {
+    color: #bb5f66;
+}
+
+span.replyto {
+    color: #6dae56;
+}
+
+span.timeclas {
+    color: #dabebe;
+}
+
+label {
+    color: #ffffff;
+}
+
+span#wsconnection {
+}
+
+span#reactcont {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -10px;
+    border: 2px solid #660909;
+    border-radius: 30%;
+    background-color: #332c29;
+}
+
+span#reactcount {
+    color: #989898;
+}
+
+#react {
+    height: 24px;
+    max-width: 24px;
+}
+
+span#emoji {
+    color: #989898;
+    border-style: dotted;
+}
+
+a {
+    color: #fd6671;
+}
+
+#embedd {
+    color: white;
+    border: 10px solid #757575;
+    margin: 0px;
+}
+
+div#messages {
+    overflow-y: scroll;
+    margin-right: 5vw;
+    background-color: #242424;
+}
+
+div#typing {
+    color: #989898;
+}
+
+div#replyingto {
+    color: #989898;
+}

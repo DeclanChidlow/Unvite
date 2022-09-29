@@ -1,0 +1,32 @@
+### Site metadata ###
+
+title: Unvolt
+
+# Used if hosting on a custom domain.
+url: ""
+baseurl: "/unvolt"
+
+### Build settings ###
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+### Content settings ###
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - LICENSE
+  - README.md
+  - Makefile

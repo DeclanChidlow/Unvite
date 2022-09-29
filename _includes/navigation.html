@@ -1,0 +1,12 @@
+{% comment %}
+    Use the baseurl as a prefix for each link in the navigation data.
+    Apply highlight formatting if the URL matches the current page.
+{% endcomment %}
+<nav>
+    {%- for item in site.data.navigation %}
+        <a href="{{ item.link | relative_url }}" {% if item.link == page.url %}class="current" {% endif %}>
+            {{ item.name }}
+        </a>
+        {% unless forloop.last %}<span> | </span>{% endunless %}
+    {% endfor -%}
+</nav>

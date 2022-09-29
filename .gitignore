@@ -1,0 +1,7 @@
+# Build output locations.
+_site/
+.sass-cache/
+
+# Gem files.
+vendor/
+.bundle/
