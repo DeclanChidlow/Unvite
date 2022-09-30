@@ -1,6 +1,6 @@
-img.embed {
-    max-height: 20vw;
-    max-width: 60vw;
+img.embed, video {
+    width: 100%;
+    height: auto;
 }
 
 img.banner {
@@ -11,18 +11,16 @@ img.banner {
 img.pfp {
     padding: 2px;
     height: 40px;
-    width: auto;
+    width: 40px;
     display: table-cell;
     vertical-align: middle;
+    border: 0px solid;
+	border-radius: 3px;
 }
 
 img#emoji {
-    height: 64px;
-    max-width: 64px;
-}
-
-video {
-    height: 20vw;
+    height: 32px;
+    max-width: 32px;
 }
 
 /* For tiny screens */
@@ -30,5 +28,6 @@ video {
 (max-width : 240px) {
 	img.pfp {
 	height: 20px;
+	width: 20px;
 }
 }

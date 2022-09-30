@@ -238,9 +238,9 @@ function login() {
     thetoken = document.getElementById("token").value;
     document.getElementById("logo2").innerHTML = "";
     document.getElementById("loggingin").innerHTML = "";
-    document.getElementById("precontrols").innerHTML = '<button onclick="changeservchannel()">Servers</button>';
+    document.getElementById("precontrols").innerHTML = '<button id="server" onclick="changeservchannel()">❮ Servers</button><button id="attach" onclick="attachprepare()">+</button>';
     document.getElementById("controls").innerHTML =
-        '<input id="a"/><button id="send" onclick="sendmessagelegacy()">Send</button><button onclick="attachprepare()">+</button><button id="gett" onclick="getmessagelegacy()">Full channel/WS reload</button>';
+        '<input id="a"/><button id="send" onclick="sendmessagelegacy()">➤</button><button id="gett" onclick="getmessagelegacy()">🗘</button>';
 
     dowebsocketstuff();
 }
@@ -297,15 +297,15 @@ function chserver() {
         }
     });
 
-    document.getElementById("channelpick").innerHTML += '<button onclick="chchannelnext()">ok</button>';
-    document.getElementById("channelpick").innerHTML += '<h2>Manual channel id: </h2><input id="customchannel"></input><button onclick="customidpick()">ok</button>';
+    document.getElementById("channelpick").innerHTML += '<button id="ok" onclick="chchannelnext()">ok</button>';
+    document.getElementById("channelpick").innerHTML += '<h2>Manual channel id: </h2><input id="customchannel"></input><button id="ok" onclick="customidpick()">ok</button>';
 }
 
 function dmlist() {
     thechannel = undefined;
     document.getElementById("replyingto").innerHTML = "";
     document.getElementById("messages").innerHTML =
-        '<button onclick="grouplist()">Groups</button><button onclick="changeservchannel()">Servers</button><button onclick="savednotesgo()">Saved Notes</button><h1>DM list: </h1><select name="seletcc" id="selecttt"></select><button onclick="chchannelnext()">ok</button>';
+        '<button onclick="grouplist()">Groups</button><button id="server" onclick="changeservchannel()">Servers</button><button onclick="savednotesgo()">Saved Notes</button><h1>DM list: </h1><select name="seletcc" id="selecttt"></select><button id="ok" onclick="chchannelnext()">ok</button>';
 
     channellist.forEach(function (item, index) {
         if (item.channel_type == "DirectMessage") {
@@ -329,7 +329,7 @@ function grouplist() {
     thechannel = undefined;
     document.getElementById("replyingto").innerHTML = "";
     document.getElementById("messages").innerHTML =
-        '<button onclick="changeservchannel()">Servers</button><button onclick="dmlist()">DM list</button><button onclick="savednotesgo()">Saved Notes</button><h1>Group list: </h1><select name="seletcc" id="selecttt"></select><button onclick="chchannelnext()">ok</button>';
+        '<button id="server" onclick="changeservchannel()">Servers</button><button onclick="dmlist()">DM list</button><button onclick="savednotesgo()">Saved Notes</button><h1>Group list: </h1><select name="seletcc" id="selecttt"></select><button id="ok" onclick="chchannelnext()">ok</button>';
     channellist.forEach(function (item, index) {
         if (item.channel_type == "Group") {
             var dm = document.createElement("option");
@@ -866,7 +866,7 @@ function getmessagelegacy() {
                 document.getElementById("messages").style.backgroundRepeat = "";
                 document.getElementById("messages").style.backgroundSize = "";
                 document.getElementById("messages").style.backgroundPositionX = "";
-                document.getElementById("messages").innerHTML = '<h2 id="newm">===</h2><button onclick="getmessagelegacyolder()">Get older messages</a>';
+                document.getElementById("messages").innerHTML = '<button onclick="getmessagelegacyolder()">Get older messages</a>';
                 if (socket.readyState == 3) {
                     dowebsocketstuff();
                 }

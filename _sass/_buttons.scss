@@ -1,0 +1,32 @@
+button, input, select {
+	color: #e5e5e5;
+	background: #313131;
+	border: none;
+}
+
+button#ok {
+	background: #fd6671;
+}
+
+button#server {
+	position: fixed;
+	top: 0;
+	left: 0;
+	border: 1px solid #2d2d2d;
+	border-bottom-right-radius: 5px;
+}
+
+button#gett {
+	position: fixed;
+	top: 0;
+	right: 0;
+	border: 1px solid #2d2d2d;
+	border-bottom-left-radius: 5px;
+}
+
+div#allcontrols {
+	position: fixed;
+	bottom: 0px;
+	background: #313131;
+	width: 100%;
+}
