@@ -1,6 +1,7 @@
 ### Site metadata ###
 
 title: Unvolt
+description: Unvolt is a minimalist, unofficial client which should work on most old and obscure devices.
 
 # Used if hosting on a custom domain.
 url: ""
@@ -10,7 +11,6 @@ baseurl: "/unvolt"
 
 plugins:
   - jekyll-sitemap
-  - jekyll-feed
   - jekyll-seo-tag
 
 ### Content settings ###
