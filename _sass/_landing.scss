@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: Lexend Deca, sans-serif;
+    color: #e5e5e5;
+    background-color: #242424;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+img {
+	float: right;
+	max-height: 80vh
+}
+
+a, a:link, a:visited, a:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+a#button {
+	padding: 4px;
+	border: 0px solid;
+	border-radius: 5px;
+	background: #fd6671;
+}
+
+a:hover#button {
+	background: #ff424f;
+}
+
+/* For smaller screens */
+@media only screen and
+(max-width: 324px) {
+	img {
+	display: none;
+}
+}
+
+/* For smaller screens */
+@media only screen and
+(max-height: 460px) {
+	img {
+	display: none;
+}
+}
