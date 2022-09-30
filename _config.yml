@@ -1,7 +1,8 @@
 ### Site metadata ###
 
 title: Unvolt
-description: Unvolt is a minimalist, unofficial client which should work on most old and obscure devices.
+locale: en_AU
+author: Declan Chidlow
 
 # Used if hosting on a custom domain.
 url: ""

@@ -13,6 +13,8 @@ title: Home
 
 <a id="button" href="https://github.com/DeclanChidlow/unvolt">View Source Code</a>
 
+<a id="button" href="https://rvlt.gg/c2RgkaxY">Revolt Server</a>
+
 ---
 
 Initially designed as a way to use Revolt on KaiOS phones, Unvolt is a minimalist, unofficial client which should work on most old and obscure devices. It's very simplistic and should allow for near perfect performance and universal compatibility.
