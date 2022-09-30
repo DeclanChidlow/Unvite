@@ -34,12 +34,14 @@ h4#logo2 {
 }
 
 h5#content {
-	font-size: 12px;
+	font-size: 15px;
 	margin: 2px 0;
     color: #eaeaea;
+    font-weight: normal;
 }
 
 h5#embedd {
+	font-size: 15px;
 	border: 1px solid;
 	border-radius: 2px;
 	padding: 2px;
@@ -49,4 +51,12 @@ h5#embedd {
 h5#filename {
     margin: 0px;
     color: #989898;
+}
+
+/* For tiny screens */
+@media only screen and
+(max-width : 240px) {
+	h5#content, h5#embedd {
+	font-size: 12px;
+}
 }

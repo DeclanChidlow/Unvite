@@ -28,7 +28,6 @@ SOFTWARE. -->
 
 <body>
     <span id="wsconnection"></span>
-    <!-- <h3 id="channelname">No channel</h3> -->
 
 
     <div id="messages"></div>

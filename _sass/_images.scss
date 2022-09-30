@@ -1,5 +1,5 @@
 img.embed, video {
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 
@@ -10,8 +10,8 @@ img.banner {
 
 img.pfp {
     padding: 2px;
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
     display: table-cell;
     vertical-align: middle;
     border: 0px solid;
@@ -29,5 +29,9 @@ img#emoji {
 	img.pfp {
 	height: 20px;
 	width: 20px;
+}
+img.embed, video {
+    width: 100%;
+    height: auto;
 }
 }

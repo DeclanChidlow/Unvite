@@ -3,7 +3,7 @@ body {
     font-family: Lexend Deca, sans-serif;
     color: #e5e5e5;
     background-color: #242424;
-    padding: 3px;
+    padding: 10px;
     font-size: 12px;
     margin-bottom: 25px;
 }
@@ -13,15 +13,15 @@ html {
 }
 
 span {
-	font-size: inherit;
+	font-size: 15px;
 }
 
 span.author {
-	font-size: 15px;
+	font-size: 18px;
 	display: table;
 	width: 100%;
 	border-top: thin solid #848484;
-    color: yellowgreen;
+    color: #eaeaea;
     align-items: center;
 }
 
@@ -32,9 +32,16 @@ span.system {
 }
 
 span.maskedauthor {
-    margin-left: 5px;
+	font-size: 18px;
+	display: table;
+	width: 100%;
+	border-top: thin solid #848484;
     color: #ff6d6c;
-    border-style: dotted;
+    align-items: center;
+}
+
+	span.deleto, span.replyto, span.timeclas {
+    font-size: 15px;
 }
 
 span.deleto {
@@ -117,7 +124,16 @@ div#replyingto {
 /* For tiny screens */
 @media only screen and
 (max-width : 240px) {
+	body {
+	padding: 3px;
+}
+	span {
+	font-size: inherit;
+}
 	span.deleto, span.replyto, span.timeclas {
     font-size: 10px;
 }
+	span.author, span.maskedauthor {
+	font-size: 15px;
+	}
 }

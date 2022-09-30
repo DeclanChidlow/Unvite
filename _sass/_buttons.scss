@@ -2,10 +2,24 @@ button, input, select {
 	color: #e5e5e5;
 	background: #313131;
 	border: none;
+	font-size: 20px;
+}
+
+button {
+	margin-right: 5px;
+}
+
+select {
+	min-width: 205px;
+}
+
+input#customchannel {
+	min-width: 201px;
 }
 
 button#ok {
 	background: #fd6671;
+	margin: 0;
 }
 
 button#server {
@@ -14,6 +28,11 @@ button#server {
 	left: 0;
 	border: 1px solid #2d2d2d;
 	border-bottom-right-radius: 5px;
+}
+
+input#a {
+	font-size: 14.5px;
+	min-width: 40%;
 }
 
 button#gett {
@@ -29,4 +48,16 @@ div#allcontrols {
 	bottom: 0px;
 	background: #313131;
 	width: 100%;
+}
+
+button#attach, button#send {
+	margin: 0;
+}
+
+/* For tiny screens */
+@media only screen and
+(max-width : 240px) {
+	button, input, select {
+		font-size: 14px;
+	}
 }

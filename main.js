@@ -240,7 +240,7 @@ function login() {
     document.getElementById("loggingin").innerHTML = "";
     document.getElementById("precontrols").innerHTML = '<button id="server" onclick="changeservchannel()">❮ Servers</button><button id="attach" onclick="attachprepare()">+</button>';
     document.getElementById("controls").innerHTML =
-        '<input id="a"/><button id="send" onclick="sendmessagelegacy()">➤</button><button id="gett" onclick="getmessagelegacy()">🗘</button>';
+        '<input id="a"/><button id="send" onclick="sendmessagelegacy()">➤</button><button id="gett" onclick="getmessagelegacy()">↺</button>';
 
     dowebsocketstuff();
 }
