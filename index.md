@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: landing
 title: Home
 ---
 
@@ -9,14 +9,14 @@ title: Home
 
 ### The Revolt client for low end and obscure devices
 
-<a id="button" href="/unvolt/app">Open Web App</a>
+<a id="button" href="app">Open Web App</a>
 
 <a id="button" href="https://github.com/DeclanChidlow/unvolt">View Source Code</a>
 
 ---
 
-Designed as a way to use Revolt on KaiOS phones, Unvolt is a simple client which should work on most old and obscure devices. It's very simplistic and should allow for near perfect performance and universal compatibility.
+Initially designed as a way to use Revolt on KaiOS phones, Unvolt is a minimalist, unofficial client which should work on most old and obscure devices. It's very simplistic and should allow for near perfect performance and universal compatibility.
 
 ---
 
-Unvolt is built on Reductv3 by DoruDoLasu. You can view it's source code on *[Github](https://github.com/DoruDoLasu/Reduct)*.
+Unvolt is built on Reductv3 by DoruDoLasu. You can view it's source code on *[GitHub](https://github.com/DoruDoLasu/Reduct)*.
