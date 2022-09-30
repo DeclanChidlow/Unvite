@@ -9,9 +9,11 @@ img.banner {
 }
 
 img.pfp {
-    margin-bottom: -2px;
-    height: 48px;
-    max-width: 48px;
+    padding: 2px;
+    height: 40px;
+    width: auto;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 img#emoji {
@@ -21,4 +23,12 @@ img#emoji {
 
 video {
     height: 20vw;
+}
+
+/* For tiny screens */
+@media only screen and
+(max-width : 240px) {
+	img.pfp {
+	height: 20px;
+}
 }

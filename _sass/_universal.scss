@@ -3,15 +3,21 @@ body {
     font-family: Lexend Deca, sans-serif;
     color: #cdd6f4;
     background-color: #242424;
+    padding: 3px;
+    font-size: 12px;
 }
 
 span {
+	font-size: inherit;
 }
 
 span.author {
-    margin-left: 5px;
+	font-size: 15px;
+	display: table;
+	width: 100%;
+	border-top: thin solid #848484;
     color: yellowgreen;
-    border-style: dotted;
+    align-items: center;
 }
 
 span.system {
@@ -80,8 +86,10 @@ a {
 
 div#messages {
     overflow-y: scroll;
+    overflow-x: hidden;
     margin-right: 5vw;
     background-color: #242424;
+    width: 100%;
 }
 
 div#typing {
@@ -90,4 +98,21 @@ div#typing {
 
 div#replyingto {
     color: #989898;
+}
+
+/* For small screens */
+@media only screen and
+(max-width : 340px) {
+	span.deleto, span.replyto, span.timeclas {
+    font-size: 15px;
+}
+}
+
+
+/* For tiny screens */
+@media only screen and
+(max-width : 240px) {
+	span.deleto, span.replyto, span.timeclas {
+    font-size: 10px;
+}
 }

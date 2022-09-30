@@ -709,10 +709,10 @@ function rendermessages() {
                 "')\">[reply] </span>" +
                 '<span class="replyto" onclick="reacttopre(\'' +
                 themessages[i]._id +
-                "')\">[react]</span>}" +
+                "')\">[react] </span>" +
                 '<span class="replyto" onclick="editprepare(\'' +
                 themessages[i]._id +
-                "')\">[edit] </span>}";
+                "')\">[edit] </span>";
 
             if (themessages[i].content !== undefined) {
                 if (themessages[i].content.split(":").length > 2) {

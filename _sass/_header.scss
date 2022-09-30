@@ -1,15 +1,7 @@
 header {
-    padding: 6px;
+    padding: 3px;
     font-size: 45px;
     text-align: center;
-    margin: 0 0 10px;
-}
-
-h1#logo {
-    margin: 0px;
-    background-color: #fd6671;
-    display: inline-block;
-    color: #000000;
 }
 
 h1 {
@@ -42,9 +34,8 @@ h4#logo2 {
 }
 
 h5#content {
-    border-style: solid;
-    border-width: 1px;
-    margin: 10px;
+	font-size: 12px;
+	margin: 2px 0;
     color: #eaeaea;
 }
 
