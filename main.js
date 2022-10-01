@@ -297,15 +297,15 @@ function chserver() {
         }
     });
 
-    document.getElementById("channelpick").innerHTML += '<button id="ok" onclick="chchannelnext()">ok</button>';
-    document.getElementById("channelpick").innerHTML += '<h2>Manual channel id: </h2><input id="customchannel"></input><button id="ok" onclick="customidpick()">ok</button>';
+    document.getElementById("channelpick").innerHTML += '<button id="ok" onclick="chchannelnext()">✓</button>';
+    document.getElementById("channelpick").innerHTML += '<h2>Manual channel id: </h2><input id="customchannel"></input><button id="ok" onclick="customidpick()">✓</button>';
 }
 
 function dmlist() {
     thechannel = undefined;
     document.getElementById("replyingto").innerHTML = "";
     document.getElementById("messages").innerHTML =
-        '<button onclick="grouplist()">Groups</button><button id="server" onclick="changeservchannel()">Servers</button><button onclick="savednotesgo()">Saved Notes</button><h1>DM list: </h1><select name="seletcc" id="selecttt"></select><button id="ok" onclick="chchannelnext()">ok</button>';
+        '<button onclick="grouplist()">Groups</button><button id="server" onclick="changeservchannel()">Servers</button><button onclick="savednotesgo()">Saved Notes</button><h1>DM list: </h1><select name="seletcc" id="selecttt"></select><button id="ok" onclick="chchannelnext()">✓</button>';
 
     channellist.forEach(function (item, index) {
         if (item.channel_type == "DirectMessage") {
@@ -329,7 +329,7 @@ function grouplist() {
     thechannel = undefined;
     document.getElementById("replyingto").innerHTML = "";
     document.getElementById("messages").innerHTML =
-        '<button id="server" onclick="changeservchannel()">Servers</button><button onclick="dmlist()">DM list</button><button onclick="savednotesgo()">Saved Notes</button><h1>Group list: </h1><select name="seletcc" id="selecttt"></select><button id="ok" onclick="chchannelnext()">ok</button>';
+        '<button id="server" onclick="changeservchannel()">Servers</button><button onclick="dmlist()">DM list</button><button onclick="savednotesgo()">Saved Notes</button><h1>Group list: </h1><select name="seletcc" id="selecttt"></select><button id="ok" onclick="chchannelnext()">✓</button>';
     channellist.forEach(function (item, index) {
         if (item.channel_type == "Group") {
             var dm = document.createElement("option");

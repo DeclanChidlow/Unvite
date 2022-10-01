@@ -17,7 +17,7 @@ title: Home
 
 ---
 
-Initially designed as a way to use Revolt on KaiOS phones, Unvolt is a minimalist, unofficial client which should work on most old and obscure devices. It's very simplistic and should allow for near perfect performance and universal compatibility.
+Initially designed as a way to use *[Revolt](https://revolt.chat)* on KaiOS phones, Unvolt is a minimalist, unofficial client which should work on most old and obscure devices. It's very simplistic and should allow for near perfect performance and universal compatibility.
 
 ---
 

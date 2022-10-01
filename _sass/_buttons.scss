@@ -9,14 +9,6 @@ button {
 	margin-right: 4px;
 }
 
-select {
-	min-width: 200px;
-}
-
-input#customchannel {
-	min-width: 201px;
-}
-
 button#ok {
 	background: #fd6671;
 	margin: 0;
@@ -60,4 +52,8 @@ button#attach, button#send {
 	button, input, select {
 		font-size: 14px;
 	}
+	input#a {
+	width: 70%;
+	min-width: none;
+}
 }

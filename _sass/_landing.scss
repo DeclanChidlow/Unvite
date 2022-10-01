@@ -11,7 +11,8 @@ body {
 
 img {
 	float: right;
-	max-height: 80vh
+	max-height: 80vh;
+	filter: drop-shadow(0 0 30px black);
 }
 
 a, a:link, a:visited, a:active {

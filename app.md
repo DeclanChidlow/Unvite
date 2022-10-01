@@ -29,7 +29,6 @@ SOFTWARE. -->
 <body>
     <span id="wsconnection"></span>
 
-
     <div id="messages"></div>
     <div id="restdiv">
     	<div id="typing"></div>
