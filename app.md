@@ -31,8 +31,8 @@ SOFTWARE. -->
 
     <div id="messages"></div>
     <div id="restdiv">
-    	<div id="typing"></div>
     	<div id="replyingto"></div>
+    	<div id="typing"></div>
 	<div id="allcontrols" style="text-align: center;">
     		<span id="precontrols">
     		</span>

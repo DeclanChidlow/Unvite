@@ -27,6 +27,14 @@ input#a {
 	min-width: 40%;
 }
 
+input#token, button#token {
+	width: 100%;
+}
+
+button#token {
+	background: #fd6671;
+}
+
 button#gett {
 	position: fixed;
 	top: 0;

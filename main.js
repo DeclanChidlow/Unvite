@@ -35,7 +35,7 @@ var timer = 0;
 var socket = 0;
 var thereplying = [];
 var theattachments = [];
-var autoscroll = false;
+var autoscroll = true;
 var istyping = true;
 
 var theoldcustemotes = {
@@ -145,7 +145,26 @@ var theoldcustemotes = {
 };
 
 document.getElementById("messages").innerHTML =
-    '<div id="loggingin" style="text-align: center;display: grid;"><input id="token"/><h4 id="logo2">ENTER TOKEN HERE and press ok</h4><button onclick="login()">ok</button><input type="checkbox" onclick="wipelocal()" id="keeptoken" name="keep"><label for="keep">Keep entered token saved in localStorage of your browser (unchecking clears it)</label><h4 id="logo2">To obtain your token, paste and press enter on this in the web console (Ctrl-Shift-I) if you\'re using Revite (default Revolt chat client): <p>window.state.auth.sessions.get(controllers.client.getReadyClient().user._id).session.token</p> or check out <a style="color: #BB000E" href="https://infi.sh/post/revolt-tokens">Infi\'s website</a> if you want a slower way that will work with all Revolt web clients</h4><h4 id="logo2"><br/><a style="color: #BB000E" href="https://github.com/DoruDoLasu/Reduct">ReductV3 GitHub</a></h4></div><h4 id="extras">Extra options: </h4><input type="checkbox" id="scrolloff" name="scrolloff"><label for="scrolloff">Always autoscroll</label>';
+    '<div id="loggingin" style="text-align: center;">\
+    <h1>Log In</h1>\
+    <p>Enter your token and click "Log In"</p>\
+    <input id="token"/>\
+    <button id="token" onclick="login()">Log In</button>\
+    <input type="checkbox" onclick="wipelocal()" id="keeptoken" name="keep" />\
+    <label for="keep">Stay logged in?</label>\
+    <h3>Unsure how to find your token?</h3>\
+    <p>\
+        If using Revite (the default Revolt client) open the web console on a computer (Ctrl+Shift+I) and input this:\
+        "window.state.auth.sessions.get(controllers.client.getReadyClient().user._id).session.token"\
+        </br>\
+        </br>\
+        If not using Revite you can follow <a href="https://infi.sh/post/revolt-tokens">this</a> guide. \
+    </p>\
+</div>\
+<h4 id="extras">Extra options:</h4>\
+<input type="checkbox" id="scrolloff" name="scrolloff" />\
+<label for="scrolloff">Always autoscroll</label>\
+';
 
 thestage = "login";
 
@@ -238,9 +257,14 @@ function login() {
     thetoken = document.getElementById("token").value;
     document.getElementById("logo2").innerHTML = "";
     document.getElementById("loggingin").innerHTML = "";
-    document.getElementById("precontrols").innerHTML = '<button id="server" onclick="changeservchannel()">❮ Servers</button><button id="attach" onclick="attachprepare()">+</button>';
+    document.getElementById("precontrols").innerHTML = '<button id="server" onclick="changeservchannel()">❮ Servers</button>\
+    <button id="attach" onclick="attachprepare()">+</button>\
+    ';
     document.getElementById("controls").innerHTML =
-        '<input id="a"/><button id="send" onclick="sendmessagelegacy()">➤</button><button id="gett" onclick="getmessagelegacy()">↺</button>';
+        '<input id="a"/>\
+        <button id="send" onclick="sendmessagelegacy()">➤</button>\
+        <button id="gett" onclick="getmessagelegacy()">↺</button>\
+        ';
 
     dowebsocketstuff();
 }
@@ -252,7 +276,11 @@ function changeservchannel() {
     document.getElementById("replyingto").innerHTML = "";
     document.getElementById("typing").innerHTML = "";
     document.getElementById("messages").innerHTML =
-        '<button onclick="grouplist()">Groups</button><button onclick="dmlist()">DM list</button><button onclick="savednotesgo()">Saved Notes</button><h1>Select server: </h1><select name="seletcc" id="selectt" onchange="chserver()"></select>';
+        '<button onclick="grouplist()">Groups</button>\
+        <button onclick="dmlist()">DM list</button>\
+        <button onclick="savednotesgo()">Saved Notes</button>\
+        <h1>Select server: </h1><select name="seletcc" id="selectt" onchange="chserver()"></select>\
+        ';
     serverlist.forEach(function (item, index) {
         var server = document.createElement("option");
         server.textContent = item.name;
@@ -298,14 +326,23 @@ function chserver() {
     });
 
     document.getElementById("channelpick").innerHTML += '<button id="ok" onclick="chchannelnext()">✓</button>';
-    document.getElementById("channelpick").innerHTML += '<h2>Manual channel id: </h2><input id="customchannel"></input><button id="ok" onclick="customidpick()">✓</button>';
+    document.getElementById("channelpick").innerHTML += '<h2>Manual channel id: </h2>\
+    <input id="customchannel"></input>\
+    <button id="ok" onclick="customidpick()">✓</button>\
+    ';
 }
 
 function dmlist() {
     thechannel = undefined;
     document.getElementById("replyingto").innerHTML = "";
     document.getElementById("messages").innerHTML =
-        '<button onclick="grouplist()">Groups</button><button id="server" onclick="changeservchannel()">Servers</button><button onclick="savednotesgo()">Saved Notes</button><h1>DM list: </h1><select name="seletcc" id="selecttt"></select><button id="ok" onclick="chchannelnext()">✓</button>';
+        '<button onclick="grouplist()">Groups</button>\
+        <button id="server" onclick="changeservchannel()">Servers</button>\
+        <button onclick="savednotesgo()">Saved Notes</button>\
+        <h1>DM list: </h1>\
+        <select name="seletcc" id="selecttt"></select>\
+        <button id="ok" onclick="chchannelnext()">✓</button>\
+        ';
 
     channellist.forEach(function (item, index) {
         if (item.channel_type == "DirectMessage") {
@@ -329,7 +366,13 @@ function grouplist() {
     thechannel = undefined;
     document.getElementById("replyingto").innerHTML = "";
     document.getElementById("messages").innerHTML =
-        '<button id="server" onclick="changeservchannel()">Servers</button><button onclick="dmlist()">DM list</button><button onclick="savednotesgo()">Saved Notes</button><h1>Group list: </h1><select name="seletcc" id="selecttt"></select><button id="ok" onclick="chchannelnext()">✓</button>';
+        '<button id="server" onclick="changeservchannel()">Servers</button>\
+        <button onclick="dmlist()">DM list</button>\
+        <button onclick="savednotesgo()">Saved Notes</button>\
+        <h1>Group list: </h1>\
+        <select name="seletcc" id="selecttt"></select>\
+        <button id="ok" onclick="chchannelnext()">✓</button>\
+        ';
     channellist.forEach(function (item, index) {
         if (item.channel_type == "Group") {
             var dm = document.createElement("option");
@@ -525,7 +568,10 @@ function reactto(messid, emoteid) {
 
 function editprepare(messageid) {
     istyping = false;
-    document.getElementById("typing").innerHTML = '<input id="edithere" label="edited"/><button onclick="editmessage(\'' + messageid + '\')">Edit</button><button onclick="closeattach()">X</button>';
+    document.getElementById("typing").innerHTML = '<input id="edithere" label="edited"/>\
+    <button onclick="editmessage(\'' + messageid + '\')">Edit</button>\
+    <button onclick="closeattach()">X</button>\
+    ';
 }
 
 function editmessage(messid) {
@@ -569,7 +615,10 @@ function editmessage(messid) {
 
 function attachprepare() {
     istyping = false;
-    document.getElementById("typing").innerHTML = '<input type="file" id="attachhere" label="edited"/><button onclick="uploadautumn()">Upload to Autumn</button><button onclick="closeattach()">X</button>';
+    document.getElementById("typing").innerHTML = '<input type="file" id="attachhere" label="edited"/>\
+    <button onclick="uploadautumn()">Upload to Autumn</button>\
+    <button onclick="closeattach()">X</button>\
+    ';
 }
 
 function closeattach() {
@@ -626,7 +675,9 @@ function resetreplytachment() {
 }
 
 function replytachment() {
-    document.getElementById("replyingto").innerHTML = "<span>Replies to: " + thereplying.length + "</span><span>, attachments: " + theattachments.length + '    </span><span onclick="resetreplytachment()">[reset]</span>';
+    document.getElementById("replyingto").innerHTML = "<span>Replies to: " + thereplying.length + "</span><span>, attachments: " + theattachments.length + '    </span>\
+    <span onclick="resetreplytachment()">[reset]</span>\
+    ';
 }
 
 function rendermessages() {
