@@ -35,7 +35,7 @@ var timer = 0;
 var socket = 0;
 var thereplying = [];
 var theattachments = [];
-var autoscroll = true;
+var autoscroll = false;
 var istyping = true;
 
 var theoldcustemotes = {
@@ -255,7 +255,6 @@ function login() {
         autoscroll = true;
     }
     thetoken = document.getElementById("token").value;
-    document.getElementById("logo2").innerHTML = "";
     document.getElementById("loggingin").innerHTML = "";
     document.getElementById("precontrols").innerHTML = '<button id="server" onclick="changeservchannel()">❮ Servers</button>\
     <button id="attach" onclick="attachprepare()">+</button>\
