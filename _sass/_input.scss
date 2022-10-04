@@ -1,7 +1,16 @@
-button, input, select {
+button, input, select, a#button {
 	color: #e5e5e5;
 	background: #313131;
 	border: none;
+}
+
+a#button {
+	background: #fd6671;
+	display: inline-block;
+	padding: 2.5px;
+	margin: 5px 0;
+	border: 0px solid;
+	border-radius: 5px;
 }
 
 select {
