@@ -12,12 +12,30 @@ baseurl: "/unvite"
 
 plugins:
   - jekyll-sitemap
+  - jekyll-feed
   - jekyll-seo-tag
 
 ### Content settings ###
 
 defaults:
-  - scope:
+  - scope: # Default for all posts
+      path: ""
+      type: "posts"
+    values:
+      layout: "other"
+      permalink: "/:categories/:title"
+      
+  - scope: # Set essay category for essay posts
+      path: "_posts/changelog"
+    values:
+      categories: changelog
+
+  - scope: # Set meta category for meta posts
+      path: "_posts/support"
+    values:
+      categories: support
+
+  - scope: # Set all pages to default layout by default
       path: ""
     values:
       layout: "default"

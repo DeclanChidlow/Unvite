@@ -1,11 +1,9 @@
 ---
-layout: landing
+layout: other
 title: Home
 ---
 
 <img src="assets/KaiOS-phone.png" id="landingphone" alt="Unvolt on a KaiOS Phone">
-
-# UNVITE
 
 ### The Revolt client for low end and obscure devices
 
@@ -21,4 +19,16 @@ Initially designed as a way to use *[Revolt](https://revolt.chat)* on KaiOS phon
 
 ---
 
+### Changelog
+Wondering what's new? Check out the changelog [here](/unvite/changelog/).
+
+---
+
+### Support
+Having issues with Unvite? Check out the guides [here](/unvite/support/).
+
+---
+
 Unvolt is built on Reductv3 by DoruDoLasu. You can view it's source code on *[GitHub](https://github.com/DoruDoLasu/Reduct)*.
+
+---

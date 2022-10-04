@@ -13,6 +13,10 @@ body {
     word-wrap: break-word;
 }
 
+li#post {
+	list-style-type: none;
+}
+
 /* For small screens */
 @media only screen and
 (max-width : 340px) {
