@@ -1,6 +1,7 @@
 ---
 layout: app
 title: App
+---
 
 <body>
     <span id="wsconnection"></span>
