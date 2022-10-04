@@ -35,7 +35,6 @@ var timer = 0;
 var socket = 0;
 var thereplying = [];
 var theattachments = [];
-var autoscroll = false;
 var istyping = true;
 
 var theoldcustemotes = {
@@ -147,9 +146,9 @@ var theoldcustemotes = {
 document.getElementById("messages").innerHTML =
     '<div id="loggingin" style="text-align: center;">\
     <h1>Log In</h1>\
-    <p>Enter your token and click "Log In"</p>\
     <input id="token"/>\
     <button id="token" onclick="login()">Log In</button>\
+    </br>\
     <input type="checkbox" onclick="wipelocal()" id="keeptoken" name="keep" />\
     <label for="keep">Stay logged in?</label>\
     <h3>Unsure how to find your token?</h3>\
@@ -161,9 +160,6 @@ document.getElementById("messages").innerHTML =
         If not using Revite you can follow <a href="https://infi.sh/post/revolt-tokens">this</a> guide. \
     </p>\
 </div>\
-<h4 id="extras">Extra options:</h4>\
-<input type="checkbox" id="scrolloff" name="scrolloff" />\
-<label for="scrolloff">Always autoscroll</label>\
 ';
 
 thestage = "login";
@@ -219,17 +215,15 @@ function dowebsocketstuff() {
             themessages = [];
             themessages[0] = thenewstuff;
             rendermessages();
-            if (autoscroll == true) {
-                document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
-            }
         }
         if (JSON.parse(datta)["type"] == "ChannelStartTyping" && JSON.parse(datta)["id"] == thechannel) {
             if (istyping == true) {
                 typtyp = JSON.parse(datta);
+                scrolltobottom();
                 if (theusers[typtyp.user] === undefined) {
                     document.getElementById("typing").innerText = typtyp.user + "is typing";
                 } else {
-                    document.getElementById("typing").innerText = theusers[typtyp.user][0] + " is typing";
+                    document.getElementById("typing").innerHTML = '<img id="typing" src="assets/bars-scale-fade.svg" alt=""/><p>' + theusers[typtyp.user][0] + ' is typing</p>';
                 }
             }
         }
@@ -251,18 +245,16 @@ function login() {
     if (document.getElementById("keeptoken").checked == true) {
         localStorage.tokeno = document.getElementById("token").value;
     }
-    if (document.getElementById("scrolloff").checked == true) {
-        autoscroll = true;
-    }
     thetoken = document.getElementById("token").value;
     document.getElementById("loggingin").innerHTML = "";
     document.getElementById("precontrols").innerHTML = '<button id="server" onclick="changeservchannel()">❮ Servers</button>\
+    <button id="gett" onclick="getmessagelegacy()">↺</button>\
+    <button id="scroll" onclick="scrolltobottom()">▼</button>\
     <button id="attach" onclick="attachprepare()">+</button>\
     ';
     document.getElementById("controls").innerHTML =
         '<input id="a"/>\
         <button id="send" onclick="sendmessagelegacy()">➤</button>\
-        <button id="gett" onclick="getmessagelegacy()">↺</button>\
         ';
 
     dowebsocketstuff();
@@ -305,9 +297,13 @@ function chserver() {
         }
     });
     if (theparsedserver.banner === undefined) {
-        document.getElementById("channelpick").innerHTML = '<h2>Select channel: </h2><select name="seletcc" id="selecttt"></select>';
+        document.getElementById("channelpick").innerHTML = '<h2>Select channel: </h2>\
+        <select name="seletcc" id="selecttt"></select>\
+        ';
     } else {
-        document.getElementById("channelpick").innerHTML = '<h2>Select channel: </h2><select name="seletcc" id="selecttt"></select>';
+        document.getElementById("channelpick").innerHTML = '<h2>Select channel: </h2>\
+        <select name="seletcc" id="selecttt"></select>\
+        ';
         document.getElementById("messages").style.backgroundImage = 'url("https://autumn.revolt.chat/banners/' + theparsedserver.banner._id + '")';
         document.getElementById("messages").style.backgroundRepeat = "no-repeat";
         document.getElementById("messages").style.backgroundSize = "contain";
@@ -752,21 +748,15 @@ function rendermessages() {
             //rher
 
             document.getElementById("messages").innerHTML +=
-                ' <span class="deleto" onclick="deletemessage(\'' +
-                themessages[i]._id +
-                '\')">[delete] </span><span class="replyto" onclick="repply(\'' +
-                themessages[i]._id +
-                "')\">[reply] </span>" +
-                '<span class="replyto" onclick="reacttopre(\'' +
-                themessages[i]._id +
-                "')\">[react] </span>" +
-                '<span class="replyto" onclick="editprepare(\'' +
-                themessages[i]._id +
-                "')\">[edit] </span>";
+                '<span class="replyto" onclick="repply(\'' + themessages[i]._id + "')\">[reply] </span>" + '\
+                <span class="replyto" onclick="reacttopre(\'' + themessages[i]._id + "')\">[react] </span>" + '\
+                <span class="replyto" onclick="editprepare(\'' + themessages[i]._id + "')\">[edit] </span>" + '\
+                <span class="deleto" onclick="deletemessage(\'' + themessages[i]._id + "')\">[delete] </span>\
+                ";
 
             if (themessages[i].content !== undefined) {
                 if (themessages[i].content.split(":").length > 2) {
-                    var mscontent = document.createElement("h5");
+                    var mscontent = document.createElement("p");
                     mscontent.id = "content";
                     msgmote = themessages[i].content.split(":");
                     msgmote.forEach(function (item, index) {
@@ -807,14 +797,14 @@ function rendermessages() {
                     document.getElementById("messages").appendChild(mscontent);
                     document.getElementById("messages").innerHTML += "</div>";
                 } else {
-                    var mscontent = document.createElement("h5");
+                    var mscontent = document.createElement("p");
                     mscontent.id = "content";
                     mscontent.innerText = themessages[i].content;
                     document.getElementById("messages").appendChild(mscontent);
                     document.getElementById("messages").innerHTML += "</div>";
                 }
             } else if (themessages[i].system !== undefined) {
-                var mscontent = document.createElement("h5");
+                var mscontent = document.createElement("p");
                 mscontent.id = "content";
                 mscontent.innerText = themessages[i].system.type + "  " + themessages[i].system.id;
                 document.getElementById("messages").appendChild(mscontent);
@@ -822,7 +812,7 @@ function rendermessages() {
 
             if (themessages[i].embeds !== undefined) {
                 themessages[i].embeds.forEach(function (item, index) {
-                    var embcontent = document.createElement("h5");
+                    var embcontent = document.createElement("p");
                     embcontent.id = "embedd";
                     embcontent.innerText = item.description;
                     if (item.colour !== undefined) {
@@ -862,11 +852,11 @@ function rendermessages() {
             if (themessages[i].attachments !== undefined) {
                 themessages[i].attachments.forEach(function (item, index) {
                     document.getElementById("messages").innerHTML +=
-                        '<h5 id="filename">' +
+                        '<p id="filename">' +
                         themessages[i]["attachments"][index]["filename"] +
                         ' <a href="https://autumn.revolt.chat/attachments/' +
                         themessages[i]["attachments"][index]["_id"] +
-                        '" target="_blank" rel="noopener noreferrer">⇓</a></h5>';
+                        '" target="_blank" rel="noopener noreferrer">⇓</a></p>';
 
                     if (themessages[i]["attachments"][index]["metadata"]["type"] == "Image") {
                         document.getElementById("messages").innerHTML += '<img class="embed" src="https://autumn.revolt.chat/attachments/' + themessages[i]["attachments"][index]["_id"] + '"></img>';
@@ -916,14 +906,11 @@ function getmessagelegacy() {
                 document.getElementById("messages").style.backgroundRepeat = "";
                 document.getElementById("messages").style.backgroundSize = "";
                 document.getElementById("messages").style.backgroundPositionX = "";
-                document.getElementById("messages").innerHTML = '<button onclick="getmessagelegacyolder()">Get older messages</a>';
+                document.getElementById("messages").innerHTML = '<button id="oldmsg" onclick="getmessagelegacyolder()">Get older messages</a>';
                 if (socket.readyState == 3) {
                     dowebsocketstuff();
                 }
                 rendermessages();
-                //if (autoscroll == true) {
-                document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
-                //}
             }
             if (getmsgsa.status === 403) {
                 console.log("Getting the channel messages failed");
@@ -935,6 +922,10 @@ function getmessagelegacy() {
         }
     };
     getmsgsa.send(null);
+}
+
+function scrolltobottom() {
+	window.scrollTo(0, document.body.scrollHeight);
 }
 
 function getmessagelegacyolder() {
@@ -954,9 +945,6 @@ function getmessagelegacyolder() {
                     dowebsocketstuff();
                 }
                 rendermessages();
-                if (autoscroll == true) {
-                    document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
-                }
             }
             if (getmsgsa.status === 403) {
                 console.log("Getting the channel messages failed");
@@ -984,7 +972,7 @@ function cancelKeepAlive() {
 
 document.addEventListener("keyup", function (event) {
     if (event.key === "Escape") {
-        document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
+        changeservchannel();
     }
 });
 

@@ -1,0 +1,30 @@
+button, input, select {
+	color: #e5e5e5;
+	background: #313131;
+	border: none;
+}
+
+select {
+	padding: 2.5px 0;
+}
+
+button#ok {
+	background: #fd6671;
+}
+
+input#token {
+	width: 60%;
+}
+
+button#token {
+	width: 60%;
+	background: #fd6671;
+}
+
+/* For small screens */
+@media only screen and
+(max-width : 340px) {
+button#token, input#token {
+	width: 100%;
+}
+}

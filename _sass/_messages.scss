@@ -1,0 +1,55 @@
+span.author, span.maskedauthor {
+	width: 100%;
+	display: table;
+	border-top: thin solid #848484;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+span.maskedauthor {
+	color: #e75e68;
+}
+
+p#content {
+	margin: 0;
+	padding-bottom: 2px;
+}
+
+span.deleto, span.replyto, span.timeclas {
+	font-size: 16px;
+}
+
+span.deleto { /* Delete button */
+    color: #bb5f66;
+}
+
+span.replyto { /* Reply, react, & edit button */
+    color: #6dae56;
+}
+
+span.timeclas { /* Time info */
+    color: #dabebe;
+}
+
+img#typing {
+	filter: invert(1);
+	height: 25px;
+	float: left;
+	width: auto;
+	margin-right: 3px;
+}
+
+
+/* For tiny screens */
+@media only screen and
+(max-width : 240px) {
+	span.author, span.maskedauthor {
+		font-size: 13px;
+}
+	p#content {
+		line-height: 15px;
+}
+	span.deleto, span.replyto, span.timeclas {
+		font-size: 11px;
+}
+}

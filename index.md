@@ -3,7 +3,7 @@ layout: landing
 title: Home
 ---
 
-![KaiOS Phone displaying Unvolt](assets/KaiOS-phone.png "Unvolt on a KaiOS Phone")
+<img src="assets/KaiOS-phone.png" id="landingphone" alt="Unvolt on a KaiOS Phone">
 
 # UNVOLT
 

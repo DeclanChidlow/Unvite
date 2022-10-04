@@ -1,0 +1,76 @@
+button#oldmsg {
+	background: #fd6671;
+	margin-bottom: 5px;
+}
+
+button#server, button#gett, button#scroll {
+	position: fixed;
+	top: 0;
+	border: 1px solid #313131;
+	font-size: 20px;
+}
+
+button#server {
+	left: 0;
+	border-bottom-right-radius: 5px;
+}
+
+button#gett {
+	right: 29px;
+	border-bottom-left-radius: 5px;
+}
+
+button#scroll {
+	right: 0;
+}
+
+div#replyingto {
+	position: fixed;
+	bottom: 29px;
+	margin-left: -10px;
+	background: #313131;
+	width: 100%;
+}
+
+div#allcontrols {
+	position: fixed;
+	bottom: 0;
+	margin-left: -10px;
+	background: #313131;
+	width: 100%;
+}
+
+button#attach {
+	float: left;
+}
+
+button#send {
+	float: right;
+}
+
+input#a, input#edithere {
+	width: 80%;
+}
+
+/* For small screens */
+@media only screen and
+(max-width : 340px) {
+button#oldmsg {
+	width: 100%;
+}
+button#server, button#gett, button#scroll {
+	font-size: 15px;
+}
+button#gett {
+	right: 24px;
+}
+div#replyingto {
+	bottom: 20px;
+	margin-left: -3px;
+}
+div#allcontrols {
+	margin-left: -3px;
+}
+}
+
+

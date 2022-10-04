@@ -1,12 +1,12 @@
 ### Site metadata ###
 
-title: Unvolt
+title: Unvite
 locale: en_AU
 author: Declan Chidlow
 
 # Used if hosting on a custom domain.
 url: ""
-baseurl: "/unvolt"
+baseurl: "/unvite"
 
 ### Build settings ###
 

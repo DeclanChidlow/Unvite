@@ -1,0 +1,39 @@
+img, video {
+	width: 30%;
+	height: auto;
+}
+
+img.pfp {
+	width: 35px;
+	height: 35px;
+	display: table-cell;
+    vertical-align: middle;
+    margin: 2px;
+    border: 0 solid rgba(0, 0, 0, 0);
+    border-radius: 2px;
+}
+
+img#emoji {
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+
+img#landingphone { /* For the phone on the landing page */
+	float: right;
+	max-height: 80vh;
+	width: auto;
+	filter: drop-shadow(0 0 30px black);
+}
+
+/* For small screens */
+@media only screen and
+(max-width : 340px) {
+	img, video {
+		width: 100%;
+}
+	img.pfp, img#emoji {
+		height: 25px;
+		width: 25px;
+	}
+}
