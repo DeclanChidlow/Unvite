@@ -1,0 +1,85 @@
+<html>
+<head>
+</head>
+<body>
+<span>Token:</span>
+<input id="tokeno"></input><br/>
+<span>Server ID:</span>
+<input id="servero"></input><br/>
+<span>Role ID:</span>
+<input id="roleid"></input><br/>
+<span>Colour:</span>
+<input id="thecolour" oninput="changepreview()"></input><br/>
+<span>Preview:</span>
+</h3>
+
+<div style="font-size: 14px; background-color: #242424; font-family: sans-serif; color: #F6F6F6; display: flex;"</div>
+<div class="avatar">
+<img src="https://api.revolt.chat/users/01EX2NCWQ0CHS3QJF0FEQS1GR4/default_avatar" width="32px" height="32px" style="border-radius: 100px">
+</div>
+<div class="rest">
+<span class="top">
+<span style="font-weight: 600 !important;-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;" id="nickolor">Testing guy</span>
+<time style="font-size: 10px; color: #848484">Today at 25:60</time>
+</span>
+<div>
+<p style="margin: 0px;">something dumb idk</p>
+</div>
+</div>
+</div>
+
+<button onclick="changerole()">Change</button>
+
+<br/>
+
+<div>
+Colour examples:
+<p>#ff0000</p>
+<p>linear-gradient(45deg, red, yellow, blue, red)</p>
+
+
+
+
+</div>
+
+<script>
+var thekolor = '';
+var thetoken = '';
+var theroleid = '';
+var theserver = '';
+
+function changepreview(){
+document.getElementById("nickolor").style.background = document.getElementById("thecolour").value + " padding-box text";
+}
+
+function changerole(){
+theroleid = document.getElementById("roleid").value;
+thetoken = document.getElementById("tokeno").value;
+thekolor = document.getElementById("thecolour").value;
+theserver = document.getElementById("servero").value;
+
+if (theroleid != "" && thetoken != "" && thekolor != "" && theserver != ""){
+  var sendo = new XMLHttpRequest();
+  sendo.open("PATCH", "https://api.revolt.chat/servers/"+ theserver + "/roles/" + theroleid, true);
+  sendo.setRequestHeader("x-session-token", thetoken);
+  sendo.setRequestHeader("Accept", "*/*");
+  sendo.setRequestHeader("Content-Type", "application/json");
+  sendo.send(JSON.stringify({colour: thekolor}));
+  } else {
+  window.alert("You forgot to fill one of the fields");
+}
+
+}
+
+</script>
+
+<style>
+p {
+    margin: 0px;
+}
+
+</style>
+
+</body>
+</html>
