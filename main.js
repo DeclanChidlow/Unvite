@@ -288,7 +288,7 @@ function chserver(){
   theserver = document.getElementById('selectt').value;
   serverlist.forEach(function(item, index) {
     if (item._id == theserver) {
-      theparsedserver = serverlist[index];
+      theparsedserver = serverlist[index];Fr
     }
   });
   if (theparsedserver.banner === undefined) {
@@ -696,7 +696,7 @@ function rendermessages(){
                   }
 
                   else if (theusers[themessages[i].author] === undefined){
-                    document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span>'+ themessages[i].author +' (full refresh to get)</span>';
+                    document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span style="color: #764347">'+ themessages[i].author +' (full refresh to get)</span>';
 
                   } else {
                   if (theusers[themessages[i].author][1] == "nope") {
@@ -726,23 +726,23 @@ function rendermessages(){
 
                   //rher
 
-                  document.getElementById("messages").innerHTML += ' <span class="deleto" onclick="deletemessage(\'' + themessages[i]._id + '\')">[delete] </span><span class="replyto" onclick="repply(\'' + themessages[i]._id + '\')">[reply] </span>' + '<span class="replyto" onclick="reacttopre(\'' + themessages[i]._id + '\')">[react]</span>}' + '<span class="replyto" onclick="editprepare(\'' + themessages[i]._id + '\')">[edit] </span>}';
+                  document.getElementById("messages").innerHTML += ' <span class="deleto" onclick="deletemessage(\'' + themessages[i]._id + '\')">[delete] </span><span class="replyto" onclick="repply(\'' + themessages[i]._id + '\')">[reply] </span>' + '<span class="replyto" onclick="reacttopre(\'' + themessages[i]._id + '\')">[react]</span>' + '<span class="replyto" onclick="editprepare(\'' + themessages[i]._id + '\')">[edit] </span>';
 
                   if (themessages[i].content !== undefined) {
 
                   if (themessages[i].content.split(":").length > 2) {
                     var mscontent = document.createElement("h5");
-                    mscontent.id = "content";
+                        mscontent.id = "content";
                     msgmote = themessages[i].content.split(":");
                     msgmote.forEach(function (item, index){
                      if ((index % 2 !=0) && (item.length == 26 && item.indexOf("<") == -1)){
                         var mscontent1 = document.createElement("span");
-                        mscontent1.class = "emoji";
-                         var emote = document.createElement("img");
-                         emote.id = "emoji";
-                         emote.src = "https://autumn.revolt.chat/emojis/" + item;
-                         mscontent1.appendChild(emote);
-                         mscontent.appendChild(mscontent1);
+                            mscontent1.class = "emoji";
+                        var emote = document.createElement("img");
+                            emote.id = "emoji";
+                       	    emote.src = "https://autumn.revolt.chat/emojis/" + item;
+                        mscontent1.appendChild(emote);
+                        mscontent.appendChild(mscontent1);
                       }
                       else if ((index % 2 !=0) && item == "cat_departure") {
                         var mscontent1 = document.createElement("span");
@@ -755,12 +755,12 @@ function rendermessages(){
                       }
                       else if (index % 2 !=0 && theoldcustemotes[item] !== undefined) {
                         var mscontent1 = document.createElement("span");
-                        mscontent1.class = "emoji";
-                         var emote = document.createElement("img");
-                         emote.id = "emoji";
-                         emote.src = "https://dl.insrt.uk/projects/revolt/emotes/" + theoldcustemotes[item];
-                         mscontent1.appendChild(emote);
-                         mscontent.appendChild(mscontent1);
+                            mscontent1.class = "emoji";
+                        var emote = document.createElement("img");
+                            emote.id = "emoji";
+                            emote.src = "https://dl.insrt.uk/projects/revolt/emotes/" + theoldcustemotes[item];
+                        mscontent1.appendChild(emote);
+                        mscontent.appendChild(mscontent1);
                       }
                       else if (index % 2 !=0) {
                         var mscontent2 = document.createElement("span");
@@ -913,8 +913,6 @@ function getmessagelegacy(){
 };
 getmsgsa.send(null);
 }
-
-
 function getmessagelegacyolder(){
   var getmsgsa = new XMLHttpRequest();
   getmsgsa.open("GET", "https://api.revolt.chat/channels/"+thechannel+"/messages?include_users=true&before="+firstmessage, true);
