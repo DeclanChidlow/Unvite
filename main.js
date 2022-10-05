@@ -718,7 +718,7 @@ function rendermessages(){
                   //<button onclick="deletemessage(" 01g7m00v0r33bycne9vj2nd93w")"="">delete</button>
 
                   if (themessages[i].replies !== undefined) {
-                    document.getElementById("messages").innerHTML += '<span color="#ffffff">replies to </span>';
+                    document.getElementById("messages").innerHTML += '<span style="color: #ffffff">replies to </span>';
                     for (rep=0;rep<themessages[i].replies.length;rep++){
                     document.getElementById("messages").innerHTML += '<a href="#' + themessages[i].replies[rep] + '">['+(rep+1)+']</a> ';
                     }
