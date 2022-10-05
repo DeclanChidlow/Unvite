@@ -708,7 +708,7 @@ function rendermessages(){
                   }
 
                   else {
-                  document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span class="author" class="nmsgtop"><img class="pfp" src="https://autumn.revolt.chat/avatars/'+ theusers[themessages[i].author][1] +'?max_side=32"/>'+theusers[themessages[i].author][0]+'</span>';
+                  document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'"  class="nmsgtop">'+'<span class="author"><img class="pfp" src="https://autumn.revolt.chat/avatars/'+ theusers[themessages[i].author][1] +'?max_side=32"/>'+theusers[themessages[i].author][0]+'</span>';
                   }
                   }
                   }
