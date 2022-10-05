@@ -696,29 +696,29 @@ function rendermessages(){
                   }
 
                   else if (theusers[themessages[i].author] === undefined){
-                    document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span style="color: #764347">'+ themessages[i].author +' (full refresh to get)</span>';
+                    document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'" class="nmsgtop">'+'<span style="color: #764347">'+ themessages[i].author +' (full refresh to get)</span>';
 
                   } else {
                   if (theusers[themessages[i].author][1] == "nope") {
-                   document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span class="author">'+theusers[themessages[i].author][0]+'</span>';
+                   document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'" class="nmsgtop">'+'<span class="author">'+theusers[themessages[i].author][0]+'</span>';
 
                   }
 
-                  else if (themessages[i].masquerade !== undefined) {document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'"><span class="maskedauthor"><img class="pfp" src="https://jan.revolt.chat/proxy?url=' + themessages[i].masquerade.avatar + '">' + themessages[i].masquerade.name +  ' (masked '+theusers[themessages[i].author][0]+')</span>';
+                  else if (themessages[i].masquerade !== undefined) {document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'" class="nmsgtop"><span class="maskedauthor"><img class="pfp" src="https://jan.revolt.chat/proxy?url=' + themessages[i].masquerade.avatar + '">' + themessages[i].masquerade.name +  ' (masked '+theusers[themessages[i].author][0]+')</span>';
                   }
 
                   else {
-                  document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span class="author"><img class="pfp" src="https://autumn.revolt.chat/avatars/'+ theusers[themessages[i].author][1] +'?max_side=32"/>'+theusers[themessages[i].author][0]+'</span>';
+                  document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span class="author" class="nmsgtop"><img class="pfp" src="https://autumn.revolt.chat/avatars/'+ theusers[themessages[i].author][1] +'?max_side=32"/>'+theusers[themessages[i].author][0]+'</span>';
                   }
                   }
                   }
 
-                  document.getElementById("messages").innerHTML += '<span class="timeclas">('+new Date(ulidtodate(themessages[i]._id)).toLocaleTimeString()+")  </span>"
+                  document.getElementById("messages").innerHTML += '<span class="timeclas" title="' + new Date(ulidtodate(themessages[i]._id)) + '">('+new Date(ulidtodate(themessages[i]._id)).toLocaleTimeString()+")  </span>"
 
                   //<button onclick="deletemessage(" 01g7m00v0r33bycne9vj2nd93w")"="">delete</button>
 
                   if (themessages[i].replies !== undefined) {
-                    document.getElementById("messages").innerHTML += '<span>replies to </span>';
+                    document.getElementById("messages").innerHTML += '<span color="#ffffff">replies to </span>';
                     for (rep=0;rep<themessages[i].replies.length;rep++){
                     document.getElementById("messages").innerHTML += '<a href="#' + themessages[i].replies[rep] + '">['+(rep+1)+']</a> ';
                     }
