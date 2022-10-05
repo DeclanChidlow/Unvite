@@ -696,19 +696,19 @@ function rendermessages(){
                   }
 
                   else if (theusers[themessages[i].author] === undefined){
-                    document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span style="color: #764347">'+ themessages[i].author +' (full refresh to get)</span>';
+                    document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'" class="msgtop">'+'<span style="color: #764347">'+ themessages[i].author +' (full refresh to get)</span>';
 
                   } else {
                   if (theusers[themessages[i].author][1] == "nope") {
-                   document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span class="author">'+theusers[themessages[i].author][0]+'</span>';
+                   document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'" class="msgtop">'+'<span class="author">'+theusers[themessages[i].author][0]+'</span>';
 
                   }
 
-                  else if (themessages[i].masquerade !== undefined) {document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'"><span class="maskedauthor"><img class="pfp" src="https://jan.revolt.chat/proxy?url=' + themessages[i].masquerade.avatar + '">' + themessages[i].masquerade.name +  ' (masked '+theusers[themessages[i].author][0]+')</span>';
+                  else if (themessages[i].masquerade !== undefined) {document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'" class="msgtop"><span class="maskedauthor"><img class="pfp" src="https://jan.revolt.chat/proxy?url=' + themessages[i].masquerade.avatar + '">' + themessages[i].masquerade.name +  ' (masked '+theusers[themessages[i].author][0]+')</span>';
                   }
 
                   else {
-                  document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'">'+'<span class="author"><img class="pfp" src="https://autumn.revolt.chat/avatars/'+ theusers[themessages[i].author][1] +'?max_side=32"/>'+theusers[themessages[i].author][0]+'</span>';
+                  document.getElementById("messages").innerHTML += '<div id="'+themessages[i]._id+'" class="msgtop">'+'<span class="author"><img class="pfp" src="https://autumn.revolt.chat/avatars/'+ theusers[themessages[i].author][1] +'?max_side=32"/>'+theusers[themessages[i].author][0]+'</span>';
                   }
                   }
                   }
