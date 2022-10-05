@@ -288,7 +288,7 @@ function chserver(){
   theserver = document.getElementById('selectt').value;
   serverlist.forEach(function(item, index) {
     if (item._id == theserver) {
-      theparsedserver = serverlist[index];Fr
+      theparsedserver = serverlist[index];
     }
   });
   if (theparsedserver.banner === undefined) {
