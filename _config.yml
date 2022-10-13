@@ -6,7 +6,7 @@ author: Declan Chidlow
 
 # Used if hosting on a custom domain.
 url: ""
-baseurl: "/unvite"
+baseurl: ""
 
 ### Build settings ###
 
