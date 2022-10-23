@@ -15,20 +15,20 @@ title: Home
 
 ---
 
-Initially designed as a way to use *[Revolt](https://revolt.chat)* on KaiOS phones, Unvite is a minimalist, unofficial client which should work on most old and obscure devices. It's very simplistic and should allow for near perfect performance and universal compatibility.
+Initially designed as a way to use [Revolt](https://revolt.chat) on KaiOS phones, Unvite is a minimalist, unofficial client which should work on most old and obscure devices. It's very simplistic and should allow for near perfect performance and universal compatibility.
 
 ---
 
 ### Changelog
-Wondering what's new? Check out the changelog [here](/unvite/changelog/).
+Wondering what's new? Check out the changelog [here](/changelog).
 
 ---
 
 ### Support
-Having issues with Unvite? Check out the guides [here](/unvite/support/).
+Having issues with Unvite? Check out the guides [here](/support).
 
 ---
 
-Unvolt is built on Reductv3 by DoruDoLasu. You can view it's source code on *[GitHub](https://github.com/DoruDoLasu/Reduct)*.
+Unvolt is built on Reductv3 by DoruDoLasu. You can view it's source code on [GitHub](https://github.com/DoruDoLasu/Reduct).
 
----
+<br style="clear:both"/>
