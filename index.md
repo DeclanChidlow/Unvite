@@ -20,12 +20,12 @@ Note that Unvite will no longer receive updates. While it should continue to fun
 ---
 
 ### Changelog
-Wondering what's new? [Check out the changelog](/changelog).
+Wondering what's new? [Check out the changelog](/Unvite/changelog).
 
 ---
 
 ### Support
-Having issues with Unvite? [Check out the support pages](/support).
+Having issues with Unvite? [Check out the support pages](/Unvite/support).
 
 ---
 
